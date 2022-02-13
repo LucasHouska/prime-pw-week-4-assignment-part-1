@@ -44,7 +44,6 @@ function isPositive( number ) {
 }
 }
 
-console.log(1);
 
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
@@ -55,18 +54,20 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
+let lastNumberAr = [1,2,3,4,5];
+let emptyAr = []
 
-function getLast() {
-let numbers = [1,2,3,4,5];
-let lastNumber = numbers.slice(-1);
-if (numbers.length === 0 ){
+function getLast(array) {
+let lastNumber = array.slice(-1);
+if (array.length === 0 ){
   console.log('undefined');
 } else {
   console.log(lastNumber);
 }
 }
 
-console.log(getLast())
+getLast(lastNumberAr)
+getLast(emptyAr);
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
@@ -83,6 +84,7 @@ return true;
 }
 
 console.log(find(8, number))
+console.log(find(3, number))
 // ----------------------
 // Stretch Goals
 // ----------------------
@@ -100,10 +102,10 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 // 9. Function to return the sum of all numbers in an array
 let numbers = [22,44,66]
 
-function sumAll( numbers ) {
+function sumAll( array ) {
   let sum = 0
-  for (var i = 0; i < numbers.length; i++) {
-    sum += numbers[i]
+  for (var i = 0; i < array.length; i++) {
+    sum += array[i]
   }
   // TODO: loop to add items
   return sum;
@@ -119,7 +121,7 @@ let input = [1,-2,3,-4,5,-6]
 function positiveNumbers(array) {
   let positiveInputs = array.filter(num => num > -1);
   if (positiveInputs === 0) {
-    return Array();
+    return Array([]);
   }
 }
 console.log(positiveNumbers(input))
